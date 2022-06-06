@@ -11,5 +11,5 @@ urlpatterns = [
     # path('bebidas/', include('familia.urls')),
     # path('comidas/', include('productos.urls')),
     # path('entradas/', include('productos.urls')),
-    path('', index, name = 'base.html')
+    path('', index, name = 'index')
 ]

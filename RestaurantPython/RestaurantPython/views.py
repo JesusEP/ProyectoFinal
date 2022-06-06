@@ -9,7 +9,7 @@ from django.shortcuts import render
 #     return render(request, 'familia.html')
 
 def index(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
 
 # def bebidas(request):
 #     return render(request, 'productos.html')
