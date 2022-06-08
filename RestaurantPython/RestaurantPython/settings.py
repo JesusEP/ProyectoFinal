@@ -43,7 +43,7 @@ BASE_APPS = [
 MY_APPS = [
 #     'bebidas'
 #     'comidas'
-#     'entradas'
+    'entradas'
 ]
 
 THIRD_APPS = [

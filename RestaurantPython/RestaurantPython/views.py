@@ -14,5 +14,5 @@ def index(request):
 # def bebidas(request):
 #     return render(request, 'productos.html')
 
-# def entradas(request):
-#     return render(request, 'productos.html')
+def entradas(request):
+    return render(request, 'entradas.html')

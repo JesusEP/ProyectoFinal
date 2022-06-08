@@ -10,6 +10,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('bebidas/', include('familia.urls')),
     # path('comidas/', include('productos.urls')),
-    # path('entradas/', include('productos.urls')),
+    path('entradas/', include('entradas.urls')),
     path('', index, name = 'index')
 ]
