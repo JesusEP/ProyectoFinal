@@ -41,7 +41,7 @@ BASE_APPS = [
 ]
 
 MY_APPS = [
-#     'bebidas'
+    'bebidas',
     'comidas',
     'entradas',
 ]
