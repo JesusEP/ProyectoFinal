@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block contenido %}
-{% for entrada in entradas %}
+
 <section class="py-5 bg-dark">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for entrada in entradas %}
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
@@ -16,13 +17,19 @@
                             {{entrada.descripcion}}
                             <!-- Product price-->
                             <br>
-                           {{entrada.precio}}$
+                            {{entrada.precio}}$
                         </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
+            
+        </div>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <a class="btn btn-outline-light" aria-current="page" href="crear-entrada/">Crear entrada</a>
         </div>
     </div>
+
 </section>
-{% endfor %}
+
 {% endblock %}
