@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
+{% if form %}
 <section class="py-5 bg-dark">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-1 gx-lg-2 row-cols-2 row-cols-md-2 row-cols-xl-2 justify-content-center">
             <div class="col-auto">
-                {% if form %}
                 <form class="row g-3 bg-light " method="POST" action="">
                     <div class="mb-3">
                         {% csrf_token %}
@@ -21,7 +21,7 @@
         </div>
     </div>
 </section>
-{% elif nuevo_producto %}
+{% elif nueva_entrada %}
 <section class="py-5 bg-dark">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -33,11 +33,11 @@
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">{{nuevo_producto.nombre}}</h5>
+                            <h5 class="fw-bolder">{{nueva_entrada.nombre}}</h5>
+                            {{nueva_entrada.descripcion}}
                             <br>
-                            {{nuevo_producto.descripcion}}
                             <!-- Product price-->
-                            {{nuevo_producto.precio}}
+                            {{nueva_entrada.precio}}
                         </div>
                     </div>
                 </div>
