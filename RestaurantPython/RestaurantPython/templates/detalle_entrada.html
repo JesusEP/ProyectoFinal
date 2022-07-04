@@ -18,9 +18,11 @@
                             <br>
                             {{entrada.precio}}$
                             <br>
+                            {% if request.user.is_authenticated %}
                             <a href="/entradas/editar-entrada/{{entrada.id}}/" class="btn btn-outline-dark">Editar</a>
                             <a href="/entradas/eliminar-entrada/{{entrada.id}}/"
                                 class="btn btn-outline-danger">Eliminar</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

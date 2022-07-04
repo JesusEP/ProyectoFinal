@@ -4,6 +4,7 @@ from django.shortcuts import render
 from bebidas.models import Bebidas
 from django.views.generic import CreateView, UpdateView
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def bebidas(request):
     bebidas = Bebidas.objects.all()
@@ -49,7 +50,7 @@ def eliminar_bebida(request, pk):
         context = {'error': 'El producto no existe'}
         return render(request, 'eliminar_bebida.html', context=context)
 
-class Crear_bebida(CreateView):
+class Crear_bebida(LoginRequiredMixin, CreateView):
     model = Bebidas
     template_name = 'crear_bebida.html'
     fields ='__all__'
@@ -57,7 +58,7 @@ class Crear_bebida(CreateView):
     def get_success_url(self):
         return reverse('detalle-bebida', kwargs={'pk':self.object.pk})
 
-class Editar_bebida(UpdateView):
+class Editar_bebida(LoginRequiredMixin, UpdateView):
     model = Bebidas
     template_name = 'editar_bebida.html'
     fields = '__all__'

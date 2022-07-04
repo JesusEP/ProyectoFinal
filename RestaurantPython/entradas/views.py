@@ -4,6 +4,7 @@ from django.shortcuts import render
 from entradas.models import Entradas
 from django.views.generic import CreateView, UpdateView
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def entradas(request):
     entradas = Entradas.objects.all()
@@ -49,7 +50,7 @@ def eliminar_entrada(request, pk):
         context = {'error': 'El producto no existe'}
         return render(request, 'eliminar_entrada.html', context=context)
 
-class Crear_entrada(CreateView):
+class Crear_entrada(LoginRequiredMixin, CreateView):
     model = Entradas
     template_name = 'crear_entrada.html'
     fields ='__all__'
@@ -57,7 +58,7 @@ class Crear_entrada(CreateView):
     def get_success_url(self):
         return reverse('detalle-entrada', kwargs={'pk':self.object.pk})
 
-class Editar_entrada(UpdateView):
+class Editar_entrada(LoginRequiredMixin, UpdateView):
     model = Entradas
     template_name = 'editar_entrada.html'
     fields = '__all__'

@@ -1,7 +1,7 @@
 from unicodedata import name
 from django.contrib import admin
 from django.urls import path, include
-from RestaurantPython.views import index, busqueda, login_view, logout_view
+from RestaurantPython.views import index, busqueda, login_view, logout_view, register_view
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -16,4 +16,5 @@ urlpatterns = [
     path('', index, name = 'index'),
     path('login/', login_view, name = 'login'),
     path('logout/', logout_view, name = 'logout'),
+    path('register/', register_view, name = 'register'),
 ]
