@@ -2,10 +2,8 @@
 {% block contenido %}
 
 <section class="py-5 bg-dark">
-    {{message}}
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            {% for entrada in entradas %}
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
@@ -20,19 +18,18 @@
                             <br>
                             {{entrada.precio}}$
                             <br>
-                            <a href="detalle-entrada/{{entrada.id}}" class="btn btn-outline-dark">Detalle</a>
+                            <a href="/entradas/editar-entrada/{{entrada.id}}/" class="btn btn-outline-dark">Editar</a>
+                            <a href="/entradas/eliminar-entrada/{{entrada.id}}/"
+                                class="btn btn-outline-danger">Eliminar</a>
                         </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
-            
         </div>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <a class="btn btn-outline-light" aria-current="page" href="crear-entrada/">Crear entrada</a>
+            <a class="btn btn-outline-light" aria-current="page" href="/entradas/">Volver al menú</a>
         </div>
     </div>
-
 </section>
 
 {% endblock %}

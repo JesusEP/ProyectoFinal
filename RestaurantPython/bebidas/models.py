@@ -6,5 +6,6 @@ class Bebidas(models.Model):
     descripcion = models.CharField(max_length=50, blank=True, null=True)
     precio = models.FloatField()
     is_active = models.BooleanField(default=True)
-  
-
+    class Meta:
+        verbose_name = 'bebida'
+        verbose_name_plural = 'bebidas'
