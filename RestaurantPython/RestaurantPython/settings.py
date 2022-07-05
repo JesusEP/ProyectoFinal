@@ -44,6 +44,7 @@ MY_APPS = [
     'bebidas',
     'comidas',
     'entradas',
+    'perfiles',
 ]
 
 THIRD_APPS = [
