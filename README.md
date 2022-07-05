@@ -1,8 +1,11 @@
-# Primera entrega del proyecto final.
-1.- Abrir el proyecto y correr el servidor en la terminal con "python manage.py runserver"
+Proyecto Final
 
-2.- Presionar en Entradas luego de eso se desplegara una pantalla en donde estan todas las entradas registradas y se podra ingresar una nueva presionando "Crear entrada", se debera llenar los campos con los siguientes datos: un nombre de la entrada, una descripcion, precio e indicar si esta activa la entrada marcando el checkbox segun corresponda.
+Jesús Pérez, realice el; Inicio: Al momento de ingresar a la app en la ruta base ‘/’; Poder listar todos los elementos, poder ver en detalle cada uno, poder crear, editar o borrar los mismos; Tener una app de registro donde se puedan registrar usuarios en el route accounts/signup; un usuario está compuesto por: email - contraseña - nombre de usuario y Contar con un admin en route admin/ donde se puedan manejar las apps y los datos en las apps.
 
-3.- Presionar en Comidas luego de eso se desplegara una pantalla en donde estan todas las comidas registradas y se podra ingresar una nueva comida presionando "Crear comida", se debera llenar los campos con los siguientes datos: un nombre de la comida, una descripcion, un precio e indicar si esta activa la comida marcando el checkbox segun corresponda.
+Guillermo Soulié, realice el; Tener una app de perfiles en el route accounts/profile/ la cual muestra la info de nuestro usuario y permite poder modificar y/o borrar: imagen - nombre - descripción -  un link a una página web - email y contraseña.
 
-4.- Presionar en Bebidas luego de eso desplegara una pantalla en donde estan todas las bebidas registradas y se podra ingresar una nueva bebida presionando "Crear bebida", se debera llenar los campos con los siguientes datos: un nombre de la bebida, una descripcion, un precio e indicar si esta activa la bebida marcando el checkbox segun corresponda.
+
+Jorge Pilcante, realice el; Tener una app de login en el route accounts/login/ la cual permite loggearse con los datos de administrador o de usuario normal y el readme.
+
+
+
