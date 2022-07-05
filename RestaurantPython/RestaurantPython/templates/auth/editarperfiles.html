@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h1>Editar Perfil</h1>
+
+<h1>De {{usuario}}</h1>
+
+
+<form action="" method="POST">{% csrf_token %}
+
+    <table>
+        {{ miformulario.as_table }}
+    </table>
+    <input type="submit", value="Enviar">
+
+</form>
+{% endblock %}

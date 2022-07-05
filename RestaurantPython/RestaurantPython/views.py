@@ -63,3 +63,24 @@ def busqueda(request):
     buscar_comidas = Comidas.objects.filter(nombre__icontains = request.GET['search'])
     context = {'buscar_entradas':buscar_entradas, 'buscar_bebidas':buscar_bebidas, 'buscar_comidas':buscar_comidas}
     return render(request, 'busqueda.html', context=context)
+
+
+
+#@login_required
+def editar_perfil(request):
+        usuario = request.user
+        if request.method == 'POST':
+            miFormulario = UserEditForm(request.POST)
+            if miFormulario.is_valid:
+                informacion = miFormulario.cleaned_data
+                usuario.email = informacion['email']
+                usuario.password1 = informacion['password1']
+                usuario.password2 = informacion['password2']
+                usuario.save()
+
+                return render (request, 'templates/index.html')
+
+        else:
+            miFormulario= UserEditForm (initial={'email':usuario.email})      
+
+        return render (request, 'templates/editarperfiles.html', {'miFormulario': miFormulario, 'usuario': usuario})      
