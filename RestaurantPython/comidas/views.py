@@ -4,6 +4,7 @@ from django.shortcuts import render
 from comidas.models import Comidas
 from django.views.generic import CreateView, UpdateView
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def comidas(request):
     comidas = Comidas.objects.all()
@@ -49,7 +50,7 @@ def eliminar_comida(request, pk):
         context = {'error': 'El producto no existe'}
         return render(request, 'eliminar_comida.html', context=context)
 
-class Crear_comida(CreateView):
+class Crear_comida(LoginRequiredMixin, CreateView):
     model = Comidas
     template_name = 'crear_comida.html'
     fields ='__all__'
@@ -57,7 +58,7 @@ class Crear_comida(CreateView):
     def get_success_url(self):
         return reverse('detalle-comida', kwargs={'pk':self.object.pk})
 
-class Editar_comida(UpdateView):
+class Editar_comida(LoginRequiredMixin, UpdateView):
     model = Comidas
     template_name = 'editar_comida.html'
     fields = '__all__'
