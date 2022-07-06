@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+    <div class="card p-4">
+        <div class=" image d-flex flex-column justify-content-center align-items-center"> 
+            {% if request.usuarios.imagen.url %}
+            <img src="{{request.user.imagen.url}}" alt="..." />
+            {% else %}
+            <img src="https://dummyimage.com/200x300/696469/000000&text=+Sin+foto" alt="..." />
+            {% endif %} 
+            <span class="name mt-3">{{request.user.username}}</span> <span
+                class="idd"></span>
+            <div class=" d-flex mt-2"> <a class="btn btn-outline-dark" href="/editar-perfil/">Editar perfil</a> </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
