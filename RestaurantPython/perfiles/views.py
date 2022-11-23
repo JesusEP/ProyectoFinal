@@ -2,7 +2,7 @@ from audioop import reverse
 from multiprocessing import context
 from urllib import request
 from django.shortcuts import render
-from entradas.models import Editar_perfil
+from perfiles.models import User_profile
 from django.views.generic import CreateView, UpdateView
 from django.urls import reverse
 
